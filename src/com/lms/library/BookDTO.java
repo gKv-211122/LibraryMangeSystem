@@ -23,6 +23,14 @@ public class BookDTO {
 
 	public class BookDAOImp implements BookDAO
 	{
+		
+		public void checkIsEmpty() {
+			
+				if(bookList.isEmpty()) {
+				
+					System.out.println("Enter correct name or your book is not added yet or removed");
+			}
+		}
 
 		@Override
 		public void addBook(Book book) {
@@ -34,6 +42,8 @@ public class BookDTO {
 		@Override
 		public ArrayList<Book> searchBookByTitle(String bookTitle) {
 			// TODO Auto-generated method stub
+			
+			checkIsEmpty();
 			
 			for(Book t : bookList) {
 				if(t.getBookTitle().equals(bookTitle)) {
@@ -51,6 +61,8 @@ public class BookDTO {
 		public ArrayList<Book> searchBookByAuthor(String bookAuthor) {
 			// TODO Auto-generated method stub
 			
+			checkIsEmpty();
+			
 			for(Book a : bookList) {
 				if(a.getBookAuthor().equals(bookAuthor)) {
 					System.out.println("Books Information are : - Book Name is : "+a.getBookTitle() + " book Edition is " +a.getBookEdition());
@@ -67,7 +79,7 @@ public class BookDTO {
 		@Override
 		public Book search(String bookTitle, String bookAuthor, String bookGenre, int bookEdition, int bookPrice) {
 			// TODO Auto-generated method stub   
-			
+			checkIsEmpty();
 			for(Book s : bookList) {
 				if(s.getBookTitle().equals(bookTitle) && s.getBookAuthor().equals(bookAuthor) && s.getBookGenre().equals(bookGenre) && s.getBookEdition()==bookEdition &&s.getBookPrice()==bookPrice ) {
 					System.out.println("Books Information are : - Book Name is : "+s.getBookTitle() + " book Edition is " +s.getBookEdition() + "book Author is "+s.getBookAuthor());
@@ -85,6 +97,7 @@ public class BookDTO {
 			// TODO Auto-generated method stub
 			System.out.println("Which of the field you want to update \n Click 1 to update Book Name \n, "
 					+ " Click 2 to update Author Name \n" + " Click 3 to update Genre \n" + "Click 4 to update Edition \n "+"Click 5 to update Price \n" + "Ente 6 to Exit !!");
+			checkIsEmpty();
 			
 			System.out.println("Enter no between 1 to 7 : ");
 			Scanner sc = new Scanner(System.in);
@@ -165,6 +178,9 @@ public class BookDTO {
 		@Override
 		public boolean removeBook(Book book) {
 			// TODO Auto-generated method stub
+			
+			checkIsEmpty();
+			
 			for(int i = 0; i < bookList.size(); i++) {
 				
 				bookList.remove(i);

@@ -133,8 +133,9 @@ public class Librarian extends Thread implements Serializable {
 		else if(choice == 6)
 		{
 			// remove book
-			//Book b4 = new Book(bookName, authorName, bookGener, bookEdition, bookPrice);
-			bookAccessObject.removeBook(BookDTO.getBookList());
+			
+		
+			System.out.println(bookAccessObject.removeBook(bookAccessObject.bk));
 			
 		}
 		else if(choice == 7) {
