@@ -40,7 +40,7 @@ public class BookDTO {
 					System.out.println("Books Information are : - Author of book is : "+t.getBookAuthor() + " book Edition is " +t.getBookEdition());
 					System.out.println(" book genre is : "+t.getBookGenre() + " book price is " +t.getBookPrice());
 				}else {
-					System.out.println("Enter correct title or your book is not added yet");
+					System.out.println("Enter correct Book Name or your book is not added yet");
 				}
 			}
 			
@@ -53,11 +53,11 @@ public class BookDTO {
 			
 			for(Book a : bookList) {
 				if(a.getBookAuthor().equals(bookAuthor)) {
-					System.out.println("Books Information are : - Title of book is : "+a.getBookTitle() + " book Edition is " +a.getBookEdition());
+					System.out.println("Books Information are : - Book Name is : "+a.getBookTitle() + " book Edition is " +a.getBookEdition());
 					System.out.println(" book genre is : "+a.getBookGenre() + " book price is " +a.getBookPrice());
 					
 				}else {
-					System.out.println("Enter correct Author or your book is not added yet");
+					System.out.println("Enter correct Author Name or your book is not added yet");
 				}
 			}
 			
@@ -70,7 +70,7 @@ public class BookDTO {
 			
 			for(Book s : bookList) {
 				if(s.getBookTitle().equals(bookTitle) && s.getBookAuthor().equals(bookAuthor) && s.getBookGenre().equals(bookGenre) && s.getBookEdition()==bookEdition &&s.getBookPrice()==bookPrice ) {
-					System.out.println("Books Information are : - Title of book is : "+s.getBookTitle() + " book Edition is " +s.getBookEdition() + "book Author is "+s.getBookAuthor());
+					System.out.println("Books Information are : - Book Name is : "+s.getBookTitle() + " book Edition is " +s.getBookEdition() + "book Author is "+s.getBookAuthor());
 					System.out.println(" book genre is : "+s.getBookGenre() + " book price is " +s.getBookPrice());
 				}else {
 					System.out.println(" your book is not added yet");
@@ -84,23 +84,23 @@ public class BookDTO {
 		public boolean updateBook(Book book) {
 			// TODO Auto-generated method stub
 			System.out.println("Which of the field you want to update \n Click 1 to update Title \n, "
-					+ " Click 2 to update Author \n" + " Click 3 to update Genre \n" + "Click 4 to update Edition \n "+"Click 5 to update Price \n");
+					+ " Click 2 to update Author \n" + " Click 3 to update Genre \n" + "Click 4 to update Edition \n "+"Click 5 to update Price \n" + "Ente 7 to Exit !!");
 			
-			System.out.println("Enter no between 1 to 6 : ");
+			System.out.println("Enter no between 1 to 7 : ");
 			Scanner sc = new Scanner(System.in);
 			
-			int chnge = sc.nextInt();
-			if(chnge == 1) {
+			int update = sc.nextInt();
+			if(update == 1) {
 				
 				Book b1 = new Book();
 				
-				System.out.println("Enter to update title :");
+				System.out.println("Enter to update bookName :");
 				String bt = sc.next();
 				
 				b1.setBookTitle(bt);
 
 			}
-			else if( chnge == 2) {
+			else if( update == 2) {
 				Book b2 = new Book();
 				
 				System.out.println("Enter to update bookAuthor :");
@@ -108,32 +108,38 @@ public class BookDTO {
 				
 				b2.setBookAuthor(bt2);
 			}
-			else if( chnge == 3) {
+			else if( update == 3) {
 				Book b3 = new Book();
 				
-				System.out.println("Enter to update title :");
+				System.out.println("Enter to update bookGeneration :");
 				String bt3 = sc.next();
 				
 				b3.setBookGenre(bt3);
 			}
-			else if( chnge == 4) {
+			else if( update == 4) {
 				Book b4 = new Book();
 				
-				System.out.println("Enter to update title :");
+				System.out.println("Enter to update bookEdition :");
 				int bt4 = sc.nextInt();
 				
 				b4.setBookEdition(bt4);;
 			}
-			else if( chnge == 5) {
+			else if( update == 5) {
 				Book b5 = new Book();
 				
-				System.out.println("Enter to update title :");
+				System.out.println("Enter to update bookPrice :");
 				int bt5 = sc.nextInt();
 				
 				b5.setBookPrice(bt5);;
 			}
+			else if(update == 7) {
+				
+				System.out.println("You are successfully Exited From BooK Store, !!!!!");
+				System.exit(0);
+				
+			}
 			else  {
-				System.out.println("Can't modify ! please enter no between 1 to 6");
+				System.out.println("Can't modify ! please enter no between 1 to 7");
 				
 			}
 
