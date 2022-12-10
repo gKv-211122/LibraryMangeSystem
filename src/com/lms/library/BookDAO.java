@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public interface BookDAO {
 	
-	Book bk = null;
+	
 	void addBook(Book book);
 	
 	ArrayList<Book> searchBookByTitle(String bookTitle);

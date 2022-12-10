@@ -181,24 +181,32 @@ public class BookDTO {
 			
 			checkIsEmpty();
 			
-			for(int i = 0; i < bookList.size(); i++) {
-				
-				bookList.remove(i);
+			int index = searchBook(book);
+
+			if (index == -1) {
+				return false;
 			}
-			
-			
-			if(bookList.isEmpty()) {
-				
-				return true;
-			}
-			
-			return false;
+			bookList.remove(index);
+			return true;
 		}
 
 		@Override
 		public int searchBook(Book book) {
 			// TODO Auto-generated method stub
-			return 0;
+			int i =0;
+//		
+			for (Book boo: bookList) {
+				if (boo.getBookTitle().equals(book.getBookTitle()) &&
+						boo.getBookAuthor().equals(book.getBookAuthor()) &&
+						boo.getBookGenre().equals(book.getBookGenre()) &&
+						boo.getBookEdition() == book.getBookEdition() &&
+						boo.getBookPrice() == book.getBookPrice()) {
+						return i;
+
+				}
+				i++;
+			}
+			return -1;
 		}
 				
 
