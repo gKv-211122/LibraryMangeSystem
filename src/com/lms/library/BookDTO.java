@@ -83,63 +83,76 @@ public class BookDTO {
 		@Override
 		public boolean updateBook(Book book) {
 			// TODO Auto-generated method stub
-			System.out.println("Which of the field you want to update \n Click 1 to update Title \n, "
-					+ " Click 2 to update Author \n" + " Click 3 to update Genre \n" + "Click 4 to update Edition \n "+"Click 5 to update Price \n" + "Ente 7 to Exit !!");
+			System.out.println("Which of the field you want to update \n Click 1 to update Book Name \n, "
+					+ " Click 2 to update Author Name \n" + " Click 3 to update Genre \n" + "Click 4 to update Edition \n "+"Click 5 to update Price \n" + "Ente 6 to Exit !!");
 			
 			System.out.println("Enter no between 1 to 7 : ");
 			Scanner sc = new Scanner(System.in);
 			
 			int update = sc.nextInt();
-			if(update == 1) {
+			switch(update) {
 				
-				Book b1 = new Book();
+				case 1:
+					Book b1 = new Book();
 				
-				System.out.println("Enter to update bookName :");
-				String bt = sc.next();
+					System.out.println("Enter to update bookName :");
+					String bt = sc.next();
 				
-				b1.setBookTitle(bt);
+					bookList.get(0).setBookTitle(bt);
+					
+					break;
 
-			}
-			else if( update == 2) {
-				Book b2 = new Book();
+			
+				case 2: 
+					Book b2 = new Book();
 				
-				System.out.println("Enter to update bookAuthor :");
-				String bt2 = sc.next();
+					System.out.println("Enter to update bookAuthor :");
+					String ba = sc.next();
 				
-				b2.setBookAuthor(bt2);
-			}
-			else if( update == 3) {
-				Book b3 = new Book();
+					bookList.get(0).setBookAuthor(ba);
+					
+					break;
+			
+				case 3:
+					Book b3 = new Book();
 				
-				System.out.println("Enter to update bookGeneration :");
-				String bt3 = sc.next();
+					System.out.println("Enter to update bookGeneration :");
+					String bg = sc.next();
 				
-				b3.setBookGenre(bt3);
-			}
-			else if( update == 4) {
-				Book b4 = new Book();
+					bookList.get(0).setBookGenre(bg);
+					
+					break;
+			
+				case 4:
+					Book b4 = new Book();
 				
-				System.out.println("Enter to update bookEdition :");
-				int bt4 = sc.nextInt();
+					System.out.println("Enter to update bookEdition :");
+					int be = sc.nextInt();
 				
-				b4.setBookEdition(bt4);;
-			}
-			else if( update == 5) {
-				Book b5 = new Book();
+				    bookList.get(0).setBookEdition(be);
+				    
+				    break;
+			
+				case 5:
+					Book b5 = new Book();
 				
-				System.out.println("Enter to update bookPrice :");
-				int bt5 = sc.nextInt();
+					System.out.println("Enter to update bookPrice :");
+					int bp = sc.nextInt();
 				
-				b5.setBookPrice(bt5);;
-			}
-			else if(update == 7) {
+					bookList.get(0).setBookPrice(bp);
+					
+					break;
+			
+				case 6:
 				
-				System.out.println("You are successfully Exited From BooK Store, !!!!!");
-				System.exit(0);
+					System.out.println("You are successfully Exited From BooK Store, !!!!!");
+					System.exit(0);
+					
+					break;
 				
-			}
-			else  {
-				System.out.println("Can't modify ! please enter no between 1 to 7");
+			
+				default:
+					System.out.println("Can't modify ! please enter no between 1 to 7");
 				
 			}
 
@@ -152,6 +165,17 @@ public class BookDTO {
 		@Override
 		public boolean removeBook(Book book) {
 			// TODO Auto-generated method stub
+			for(int i = 0; i < bookList.size(); i++) {
+				
+				bookList.remove(i);
+			}
+			
+			
+			if(bookList.isEmpty()) {
+				
+				return true;
+			}
+			
 			return false;
 		}
 

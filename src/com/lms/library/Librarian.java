@@ -112,13 +112,13 @@ public class Librarian extends Thread implements Serializable {
 		{
 			// update book
 			System.out.println("Enter Book Name: ");
-			String bookName = sc.nextLine();
+			String bookName = sc.next();
 			
 			System.out.println("Enter Author Name: ");
-			String authorName = sc.nextLine();
+			String authorName = sc.next();
 			
 			System.out.println("Enter Book Generation Name: ");
-			String bookGener = sc.nextLine();
+			String bookGener = sc.next();
 			
 			System.out.println("Enter Book Edition: ");
 			int bookEdition = sc.nextInt();
@@ -133,6 +133,9 @@ public class Librarian extends Thread implements Serializable {
 		else if(choice == 6)
 		{
 			// remove book
+			//Book b4 = new Book(bookName, authorName, bookGener, bookEdition, bookPrice);
+			bookAccessObject.removeBook(BookDTO.getBookList());
+			
 		}
 		else if(choice == 7) {
 			
