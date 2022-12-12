@@ -16,6 +16,7 @@ public class Librarian extends Thread implements Serializable {
 		
 		do {
 			
+			try {
 		
 		System.out.println("Press 1 to add a book...");
 		System.out.println("Press 2 to Search book...");
@@ -136,13 +137,13 @@ public class Librarian extends Thread implements Serializable {
 			
 		
 			System.out.println("Enter the Book Title");
-			String bookTitel = sc.nextLine();
+			String bookTitel = sc.next();
 
 			System.out.println("Enter Book Author Name");
-			String bookAuthor = sc.nextLine();
+			String bookAuthor = sc.next();
 
 			System.out.println("Enter Book Genre");
-			String bookGenre = sc.nextLine();
+			String bookGenre = sc.next();
 
 			System.out.println("Enter the Book Edition");
 			int bookEdition= sc.nextInt();
@@ -169,6 +170,8 @@ public class Librarian extends Thread implements Serializable {
 		{
 			throw new InvalidChoiceException();
 		}
+		
+		
 		System.out.println("If you want to continue the process again then click \'y\'");
 		System.out.println("If you want to Exit From The Book Srore, Enter \'n\'");
 		ch = sc.next().charAt(0);
@@ -184,6 +187,12 @@ public class Librarian extends Thread implements Serializable {
 			
 		}
 		
+			} catch (InvalidChoiceException e) {
+				
+				System.out.println(e);
+				
+				access();
+			}
 		
 		
 		

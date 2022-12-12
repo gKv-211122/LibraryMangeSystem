@@ -47,7 +47,7 @@ public class BookDTO {
 			
 			for(Book t : bookList) {
 				if(t.getBookTitle().equals(bookTitle)) {
-					System.out.println("Books Information are : - Author of book is : "+t.getBookAuthor() + " book Edition is " +t.getBookEdition());
+					System.out.println("Books Details are : - Author of book is : "+t.getBookAuthor() + " book Edition is " +t.getBookEdition());
 					System.out.println(" book genre is : "+t.getBookGenre() + " book price is " +t.getBookPrice());
 				}else {
 					System.out.println("Enter correct Book Name or your book is not added yet");
@@ -65,7 +65,7 @@ public class BookDTO {
 			
 			for(Book a : bookList) {
 				if(a.getBookAuthor().equals(bookAuthor)) {
-					System.out.println("Books Information are : - Book Name is : "+a.getBookTitle() + " book Edition is " +a.getBookEdition());
+					System.out.println("Books Details are : - Book Name is : "+a.getBookTitle() + " book Edition is " +a.getBookEdition());
 					System.out.println(" book genre is : "+a.getBookGenre() + " book price is " +a.getBookPrice());
 					
 				}else {
@@ -82,7 +82,7 @@ public class BookDTO {
 			checkIsEmpty();
 			for(Book s : bookList) {
 				if(s.getBookTitle().equals(bookTitle) && s.getBookAuthor().equals(bookAuthor) && s.getBookGenre().equals(bookGenre) && s.getBookEdition()==bookEdition &&s.getBookPrice()==bookPrice ) {
-					System.out.println("Books Information are : - Book Name is : "+s.getBookTitle() + " book Edition is " +s.getBookEdition() + "book Author is "+s.getBookAuthor());
+					System.out.println("Books Details are : - Book Name is : "+s.getBookTitle() + " book Edition is " +s.getBookEdition() + "book Author is "+s.getBookAuthor());
 					System.out.println(" book genre is : "+s.getBookGenre() + " book price is " +s.getBookPrice());
 				}else {
 					System.out.println(" your book is not added yet");
